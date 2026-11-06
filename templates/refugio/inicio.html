@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block contenido %}
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="col-md-8">
+          <p class="text-uppercase fw-semibold mb-2">Fundación Huellas del Puerto · Valparaíso</p>
+          <h1 class="display-4 fw-bold">Un nuevo comienzo empieza con un hogar</h1>
+          <p class="lead">Rescatamos, cuidamos y acompañamos a los animales hasta que encuentran una familia
+            comprometida con ellos.</p>
+          <a class="btn btn-principal btn-lg" href="{% url 'catalogo' %}">Conoce a las mascotas</a>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center">
+          <h2>Nuestra misión</h2>
+          <p class="fs-5">En Huellas del Puerto trabajamos por el rescate, la rehabilitación y la adopción responsable
+            de animales en situación de abandono. Cada adopción empieza con información clara y un compromiso para toda
+            la vida.</p>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 destacadas">
+      <div class="container">
+        <h2 class="mb-4">Ellos esperan conocerte</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% for mascota in mascotas %}
+            {% include 'refugio/tarjeta.html' %}
+          {% empty %}<p>Aún no hay mascotas registradas.</p>{% endfor %}
+        </div>
+        <div class="text-center mt-4"><a href="{% url 'catalogo' %}" class="btn btn-outline-dark">Ver todas las mascotas</a>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="mb-4">Otras formas de ayudar</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h3 class="h5">Voluntariado</h3>
+            <p>Ayuda en los cuidados diarios y la socialización de los animales.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5">Hogar temporal</h3>
+            <p>Ofrece un lugar seguro mientras una mascota encuentra familia definitiva.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5">Donaciones</h3>
+            <p>Colabora con alimento, mantas o materiales para el refugio.</p>
+          </div>
+        </div>
+        <p class="mb-0">Para saber cómo participar, escríbenos al correo indicado abajo.</p>
+      </div>
+    </section>
+  </main>
+
+{% endblock %}

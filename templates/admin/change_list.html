@@ -1,0 +1,10 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+<p>
+  <a class="button" href="{% url 'admin:index' %}">
+    Volver a administración
+  </a>
+</p>
+{{ block.super }}
+{% endblock %}

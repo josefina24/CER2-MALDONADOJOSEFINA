@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<main class="container py-4">
+  <h1>Gestión de mascotas</h1>
+  <p>Sesión de {{ user.username }}.</p>
+  {% if perms.refugio.add_mascota %}
+  <a class="btn btn-principal mb-3" href="{% url 'agregar_mascota' %}">Agregar mascota</a>
+  {% else %}<p>No tienes permiso para agregar mascotas.</p>{% endif %}
+  {% if not perms.refugio.change_mascota %}<p>No tienes permiso para modificar mascotas.</p>{% endif %}
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead><tr><th>Nombre</th><th>Especie</th><th>Estado</th><th>Acciones</th></tr></thead>
+      <tbody>
+        {% for mascota in mascotas %}
+        <tr>
+          <td>{{ mascota.nombre }}</td><td>{{ mascota.especie.nombre }}</td><td>{{ mascota.estado }}</td>
+          <td><a href="{% url 'detalle' mascota.pk %}">Ver detalle</a>
+          {% if perms.refugio.change_mascota %}
+          · <a href="{% url 'editar_mascota' mascota.pk %}">Modificar</a>
+          {% endif %}</td>
+        </tr>
+        {% empty %}<tr><td colspan="4">No hay mascotas registradas.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</main>
+{% endblock %}

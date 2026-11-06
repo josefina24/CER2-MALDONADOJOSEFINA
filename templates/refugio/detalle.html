@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo %}{{ mascota.nombre }} | Huellas del Puerto{% endblock %}
+{% block contenido %}
+<main class="container py-4">
+  {% if mascota.estado == 'Adoptada' %}
+  <a href="{% url 'gestion' %}">Volver a gestión</a>
+  {% else %}
+  <a href="{% url 'catalogo' %}">Volver al catálogo</a>
+  {% endif %}
+  <div class="row g-4 mt-2">
+    <div class="col-md-6"><img class="img-fluid rounded foto-detalle" src="{{ mascota.imagen }}" alt="Fotografía de {{ mascota.nombre }}"></div>
+    <div class="col-md-6">
+      <h1>{{ mascota.nombre }}</h1>
+      <p>{{ mascota.descripcion }}</p>
+      <dl>
+        <dt>Especie</dt><dd>{{ mascota.especie.nombre }}</dd>
+        <dt>Sexo</dt><dd>{{ mascota.sexo }}</dd>
+        <dt>Edad aproximada</dt><dd>{{ mascota.edad_aproximada }} años aprox.</dd>
+        <dt>Tamaño</dt><dd>{{ mascota.tamano }}</dd>
+        <dt>Estado</dt><dd>{{ mascota.estado }}</dd>
+      </dl>
+      {% if mascota.estado != 'Adoptada' %}
+      <a class="btn btn-principal" href="{% url 'adopcion' %}">Información para adoptar</a>
+      {% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}

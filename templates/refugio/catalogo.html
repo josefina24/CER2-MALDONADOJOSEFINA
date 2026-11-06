@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo %}Mascotas en adopción | Huellas del Puerto{% endblock %}
+{% block contenido %}
+<main class="container py-4">
+  <h1>Mascotas en adopción</h1>
+  <p class="lead">Conoce sus personalidades y encuentra una compañía que encaje con tu hogar.</p>
+  <form method="get" class="mb-4">
+    <label for="especie" class="form-label">Filtrar por especie</label>
+    <select name="especie" id="especie" class="form-select mb-2">
+      <option value="">Todas las especies</option>
+      {% for especie in especies %}
+      <option value="{{ especie.pk }}" {% if especie == especie_seleccionada %}selected{% endif %}>{{ especie.nombre }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn btn-principal" type="submit">Filtrar</button>
+    <a href="{% url 'catalogo' %}" class="btn btn-outline-dark">Quitar filtro</a>
+  </form>
+  {% if especie_seleccionada %}
+  <h2>{{ especie_seleccionada.nombre }}</h2>
+  <p>{{ especie_seleccionada.descripcion }}</p>
+  {% endif %}
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    {% for mascota in mascotas %}
+      {% include 'refugio/tarjeta.html' %}
+    {% empty %}<p>No hay mascotas para mostrar.</p>{% endfor %}
+  </div>
+</main>
+{% endblock %}

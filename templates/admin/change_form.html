@@ -1,0 +1,33 @@
+{% extends "admin/change_form.html" %}
+{% load admin_urls static %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="{% static 'refugio/cancelar_admin.js' %}" defer></script>
+{% endblock %}
+
+{% block field_sets %}
+<p>
+  {% if is_popup %}
+    <button type="button" class="button cancelar-popup">Cancelar y cerrar ventana</button>
+  {% elif add %}
+    <a class="button" href="{% url 'admin:index' %}">Cancelar y volver a administración</a>
+  {% else %}
+    <a class="button" href="{% url opts|admin_urlname:'changelist' %}">Cancelar y volver a la lista</a>
+  {% endif %}
+</p>
+{{ block.super }}
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+{{ block.super }}
+<div class="submit-row">
+  {% if is_popup %}
+    <button type="button" class="button cancelar-popup">Cancelar y cerrar ventana</button>
+  {% elif add %}
+    <a class="closelink" href="{% url 'admin:index' %}">Cancelar y volver a administración</a>
+  {% else %}
+    <a class="closelink" href="{% url opts|admin_urlname:'changelist' %}">Cancelar y volver a la lista</a>
+  {% endif %}
+</div>
+{% endblock %}

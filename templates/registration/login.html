@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<main class="container py-4">
+  <h1>Iniciar sesión</h1>
+  <form method="post" class="formulario bg-white p-4 rounded">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <button class="btn btn-principal" type="submit">Ingresar</button>
+  </form>
+</main>
+{% endblock %}

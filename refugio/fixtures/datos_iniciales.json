@@ -1,0 +1,152 @@
+[
+  {
+    "model": "refugio.especie",
+    "pk": 1,
+    "fields": {
+      "nombre": "Perro",
+      "descripcion": "Perros rescatados en busca de un hogar responsable."
+    }
+  },
+  {
+    "model": "refugio.especie",
+    "pk": 2,
+    "fields": {
+      "nombre": "Gato",
+      "descripcion": "Gatos rescatados en busca de una familia."
+    }
+  },
+  {
+    "model": "refugio.especie",
+    "pk": 3,
+    "fields": {
+      "nombre": "Conejo",
+      "descripcion": "Conejos que requieren cuidados y un espacio adecuado."
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 1,
+    "fields": {
+      "nombre": "Lola",
+      "descripcion": "Cariñosa y tranquila; prefiere ser la única mascota del hogar.",
+      "sexo": "Hembra",
+      "edad_aproximada": 3,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Lola.jpg",
+      "especie": 1,
+      "tamano": "Pequeño",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 2,
+    "fields": {
+      "nombre": "Marti",
+      "descripcion": "Alegre y sociable; puede convivir con otros perros.",
+      "sexo": "Hembra",
+      "edad_aproximada": 2,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Marti.jpg",
+      "especie": 1,
+      "tamano": "Pequeño",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 3,
+    "fields": {
+      "nombre": "Gala",
+      "descripcion": "Dulce y observadora; puede compartir hogar con otros gatos.",
+      "sexo": "Hembra",
+      "edad_aproximada": 1,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Gala.jpg",
+      "especie": 2,
+      "tamano": "Pequeño",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 4,
+    "fields": {
+      "nombre": "Ivy",
+      "descripcion": "Paciente y afectuosa; puede convivir con perros y gatos.",
+      "sexo": "Hembra",
+      "edad_aproximada": 5,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Ivy.jpg",
+      "especie": 1,
+      "tamano": "Grande",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 5,
+    "fields": {
+      "nombre": "MaryJane",
+      "descripcion": "Independiente y serena; prefiere ser la única mascota.",
+      "sexo": "Hembra",
+      "edad_aproximada": 4,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/MaryJane.jpeg",
+      "especie": 2,
+      "tamano": "Pequeño",
+      "estado": "En proceso de adopción"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 6,
+    "fields": {
+      "nombre": "Aries",
+      "descripcion": "Regalón y calmado; puede compartir con otros gatos.",
+      "sexo": "Macho",
+      "edad_aproximada": 3,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Aries.jpeg",
+      "especie": 2,
+      "tamano": "Mediano",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 7,
+    "fields": {
+      "nombre": "Rolo",
+      "descripcion": "Curioso y tranquilo; solo puede compartir con conejos compatibles.",
+      "sexo": "Macho",
+      "edad_aproximada": 1,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Rolo.jpg",
+      "especie": 3,
+      "tamano": "Pequeño",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 8,
+    "fields": {
+      "nombre": "Viggo",
+      "descripcion": "Juguetón y sociable; puede convivir con otros gatos.",
+      "sexo": "Macho",
+      "edad_aproximada": 2,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Viggo.jpg",
+      "especie": 2,
+      "tamano": "Mediano",
+      "estado": "Disponible"
+    }
+  },
+  {
+    "model": "refugio.mascota",
+    "pk": 9,
+    "fields": {
+      "nombre": "Manchas",
+      "descripcion": "Enérgico y leal; prefiere ser la única mascota del hogar.",
+      "sexo": "Macho",
+      "edad_aproximada": 4,
+      "imagen": "http://127.0.0.1:8000/static/imagenes/Manchas.jpg",
+      "especie": 1,
+      "tamano": "Mediano",
+      "estado": "Disponible"
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<main class="container py-4">
+  <h1>{{ titulo }}</h1>
+  <form method="post" class="formulario bg-white p-4 rounded">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-principal" type="submit">Guardar</button>
+    <a class="btn btn-outline-dark" href="{% url 'gestion' %}">Cancelar</a>
+  </form>
+</main>
+{% endblock %}

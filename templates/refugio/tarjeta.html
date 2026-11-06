@@ -1,0 +1,12 @@
+<div class="col">
+  <article class="card">
+    <img src="{{ mascota.imagen }}" alt="Fotografía de {{ mascota.nombre }}" loading="lazy">
+    <div class="card-body">
+      <h2 class="h5 card-title">{{ mascota.nombre }}</h2>
+      <p><span class="badge {% if mascota.estado == 'Disponible' %}disponible{% else %}en-proceso{% endif %}">{{ mascota.estado }}</span></p>
+      <p>{{ mascota.especie.nombre }} · {{ mascota.edad_aproximada }} años aprox. · {{ mascota.tamano }}</p>
+      <p>{{ mascota.descripcion }}</p>
+      <a class="btn btn-principal" href="{% url 'detalle' mascota.pk %}">Conocer a {{ mascota.nombre }}</a>
+    </div>
+  </article>
+</div>
